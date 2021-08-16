@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg_decor"
+    tools:context=".view.HomeFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="25dp">
+        <LinearLayout
+            android:id="@+id/homeHeader"
+            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Find Your\nFavorite Food"
+                android:textSize="28dp"
+                android:fontFamily="@font/bentonsans_bold"
+                android:layout_weight="2"
+                android:textColor="@color/white"  />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#252525"
+            app:layout_constraintTop_toBottomOf="@+id/homeHeader"
+            app:queryHint="Search Your Food" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restaurants"
+            android:fontFamily="@font/bentonsans_bold"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RestaurantsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/row_homerestaurants"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular Foods"
+            android:fontFamily="@font/bentonsans_bold"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/RestaurantsRecyclerView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/FoodsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:listitem="@layout/row_homefoods"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
