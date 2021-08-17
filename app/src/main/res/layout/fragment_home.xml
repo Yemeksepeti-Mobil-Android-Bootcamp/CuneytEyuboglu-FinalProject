@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_bg_decor"
-    tools:context=".view.HomeFragment">
+    tools:context=".ui.home.HomeFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -45,11 +45,12 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Restaurants"
-            android:fontFamily="@font/bentonsans_bold"
-            android:textSize="15sp"
-            android:textColor="@color/white"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/bentonsans_bold"
+            android:text="Restaurants"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/searchView"
             app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -66,11 +67,12 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Popular Foods"
-            android:fontFamily="@font/bentonsans_bold"
-            android:textSize="15sp"
-            android:textColor="@color/white"
             android:layout_marginTop="20dp"
+            android:fontFamily="@font/bentonsans_bold"
+            android:text="Popular Foods"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/RestaurantsRecyclerView"
             app:layout_constraintTop_toBottomOf="@+id/RestaurantsRecyclerView" />
 
         <androidx.recyclerview.widget.RecyclerView

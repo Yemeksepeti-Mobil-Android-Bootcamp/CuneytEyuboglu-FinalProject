@@ -15,6 +15,6 @@
     </style>
     <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/active_tab_color</item>
-        <item name="android:textColorSecondary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/white</item>
     </style>
 </resources>
