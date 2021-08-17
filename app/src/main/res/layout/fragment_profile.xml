@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/restaurantImage"
+            android:id="@+id/restaurantDetailimg"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_alignParentTop="true"
@@ -21,11 +21,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/restaurantImage"
+            android:layout_below="@+id/restaurantDetailimg"
             android:padding="10dp"
             >
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/restaurantDetailName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bentonsans_bold"
@@ -37,7 +37,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/restaurantDetailDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ankara, TR"
@@ -45,7 +45,7 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/restaurantDetailName" />
 
             <EditText
                 android:id="@+id/editText"
@@ -55,7 +55,7 @@
                 android:text="Email"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                app:layout_constraintTop_toBottomOf="@+id/restaurantDetailDesc" />
 
             <EditText
                 android:layout_width="match_parent"

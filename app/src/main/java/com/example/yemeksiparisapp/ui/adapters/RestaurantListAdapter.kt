@@ -2,6 +2,8 @@ package com.example.yemeksiparisapp.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.yemeksiparisapp.R
@@ -36,7 +38,14 @@ class RestaurantListAdapter: RecyclerView.Adapter<RestaurantListAdapter.ViewHold
     ) {
         restaurantList?.let {
             holder.setItem(it[position])
+            holder.binding.restrowCard.setOnClickListener{ View ->
+                val bundle = bundleOf("restaurantId" to it[position].id)
+                var navController = Navigation.findNavController(View)
+                navController.navigate(R.id.action_homeFragment_to_restaurantDetailFragment, bundle)
+
+            }
         }
+
     }
 
     override fun getItemCount(): Int {

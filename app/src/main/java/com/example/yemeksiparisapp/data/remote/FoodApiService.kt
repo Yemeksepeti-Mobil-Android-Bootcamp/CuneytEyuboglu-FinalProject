@@ -7,10 +7,7 @@ import com.example.yemeksiparisapp.data.entity.register.RegisterRequest
 import com.example.yemeksiparisapp.data.entity.register.RegisterResponse
 import com.example.yemeksiparisapp.data.entity.restaurants.RestaurantResponse
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface FoodApiService {
 
@@ -25,4 +22,8 @@ interface FoodApiService {
 
     @GET("api/restaurants/randomfood")
     suspend fun getRandomFoods(@Header("x-access-token") token: String): Response<FoodResponse>
+
+    @GET("api/restaurants/{restaurant_id}")
+    suspend fun getRestaurantbyId(@Path("restaurant_id") restaurant_id : String,
+                                  @Header("x-access-token")token: String): Response<RestaurantResponse>
 }

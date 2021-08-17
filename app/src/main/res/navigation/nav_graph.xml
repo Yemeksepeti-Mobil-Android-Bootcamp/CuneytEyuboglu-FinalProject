@@ -29,6 +29,10 @@
         android:id="@+id/restaurantDetailFragment"
         android:name="com.example.yemeksiparisapp.ui.restaurantdetail.RestaurantDetailFragment"
         android:label="fragment_restaurant_detail"
-        tools:layout="@layout/fragment_restaurant_detail" />
+        tools:layout="@layout/fragment_restaurant_detail" >
+        <action
+            android:id="@+id/action_restaurantDetailFragment_to_basketFragment"
+            app:destination="@id/basketFragment" />
+    </fragment>
 
 </navigation>

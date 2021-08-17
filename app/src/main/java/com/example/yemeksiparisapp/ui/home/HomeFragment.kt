@@ -34,13 +34,13 @@ class HomeFragment : Fragment() {
         _binding.RestaurantsRecyclerView.adapter = restaurantListRvAdapter
         _binding.FoodsRecyclerView.adapter = foodListRvAdapter
         val token = viewModel.getToken()
-        println("benim token: "+token)
+        //println("benim token: "+token)
 
         if (token != null) {
             viewModel.getAllRestaurants(token).observe(viewLifecycleOwner,{
                 when(it.status){
                     Resource.Status.LOADING -> {
-                        println(it)
+                        //println(it)
                     }
                     Resource.Status.SUCCESS -> {
                         it.data?.let {
@@ -49,14 +49,14 @@ class HomeFragment : Fragment() {
                         }
                     }
                     Resource.Status.ERROR -> {
-                        println(it)
+                        //println(it)
                     }
                 }
             })
             viewModel.getRandomFoods(token).observe(viewLifecycleOwner,{
                 when(it.status){
                     Resource.Status.LOADING -> {
-                        println(it)
+                        //println(it)
                     }
                     Resource.Status.SUCCESS -> {
                         it.data?.let{
@@ -66,7 +66,7 @@ class HomeFragment : Fragment() {
                         }
                     }
                     Resource.Status.ERROR -> {
-                        println(it)
+                        //println(it)
                     }
                 }
             })
