@@ -20,7 +20,6 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        println("qwqweqweqweqwe")
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 

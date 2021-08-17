@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.yemeksiparisapp.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_restaurantDetailFragment"
+            app:destination="@id/restaurantDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/basketFragment"
@@ -22,13 +26,9 @@
         android:name="com.example.yemeksiparisapp.ui.profile.ProfileFragment"
         android:label="ProfileFragment" />
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.yemeksiparisapp.ui.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.example.yemeksiparisapp.ui.register.RegisterFragment"
-        android:label="RegisterFragment" />
+        android:id="@+id/restaurantDetailFragment"
+        android:name="com.example.yemeksiparisapp.ui.restaurantdetail.RestaurantDetailFragment"
+        android:label="fragment_restaurant_detail"
+        tools:layout="@layout/fragment_restaurant_detail" />
 
 </navigation>
