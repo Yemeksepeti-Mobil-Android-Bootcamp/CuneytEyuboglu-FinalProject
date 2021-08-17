@@ -1,6 +1,7 @@
 package com.example.yemeksiparisapp.di
 
 import com.example.yemeksiparisapp.BuildConfig
+import com.example.yemeksiparisapp.data.entity.common.Endpoint
 import com.example.yemeksiparisapp.data.remote.FoodApiService
 import com.example.yemeksiparisapp.data.remote.RemoteDataSource
 import com.google.gson.Gson
@@ -25,9 +26,10 @@ class NetworkModule {
     fun provideRetrofit(
         okHttpClient: OkHttpClient,
         gson: Gson,
+        endpoint: Endpoint
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(" ")
+            .baseUrl(endpoint.url)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(okHttpClient)
             .build()
@@ -47,11 +49,11 @@ class NetworkModule {
         return builder.build()
     }
 
-    /*@Provides
+    @Provides
     fun provideEndpoint(): Endpoint {
 
-        return Endpoint("https://dist-learn.herokuapp.com/")
-    }*/
+        return Endpoint("https://ceyuboglubackend.herokuapp.com/")
+    }
 
     @Provides
     fun provideRemoteDataSource(

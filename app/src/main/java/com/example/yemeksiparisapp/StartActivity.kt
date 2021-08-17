@@ -7,7 +7,9 @@ import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
 import com.example.yemeksiparisapp.databinding.ActivityStartBinding
 import com.example.yemeksiparisapp.ui.adapters.PagerAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class StartActivity : AppCompatActivity() {
     private lateinit var _binding: ActivityStartBinding
     lateinit var viewPager: ViewPager2
