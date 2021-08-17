@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.example.yemeksiparisapp.data.FoodApiRepository
+import com.example.yemeksiparisapp.data.entity.foods.FoodResponse
 import com.example.yemeksiparisapp.data.entity.restaurants.RestaurantResponse
 import com.example.yemeksiparisapp.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,6 +18,8 @@ class HomeViewModel @Inject constructor(
 ): ViewModel()  {
 
     fun getAllRestaurants(token:String) : LiveData<Resource<RestaurantResponse>> = foodApiRepository.getAllRestaurants(token)
+
+    fun getRandomFoods(token:String) : LiveData<Resource<FoodResponse>> = foodApiRepository.getRandomFoods(token)
 
     fun getToken() : String? = foodApiRepository.getToken()
 }

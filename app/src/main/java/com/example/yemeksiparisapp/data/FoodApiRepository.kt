@@ -34,4 +34,8 @@ class FoodApiRepository @Inject constructor(
     fun getAllRestaurants(token: String) = performNetworkOperation {
         remoteDataSource.getAllRestaurants(token)
     }
+
+    fun getRandomFoods(token: String) = performNetworkOperation {
+        remoteDataSource.getRandomFoods(token)
+    }
 }

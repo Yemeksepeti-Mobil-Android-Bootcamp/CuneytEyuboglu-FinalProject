@@ -1,5 +1,6 @@
 package com.example.yemeksiparisapp.data.remote
 
+import com.example.yemeksiparisapp.data.entity.foods.FoodResponse
 import com.example.yemeksiparisapp.data.entity.login.LoginRequest
 import com.example.yemeksiparisapp.data.entity.login.LoginResponse
 import com.example.yemeksiparisapp.data.entity.register.RegisterRequest
@@ -20,5 +21,8 @@ interface FoodApiService {
     suspend fun login(@Body request: LoginRequest) : Response<LoginResponse>
 
     @GET("api/restaurants")
-    suspend fun getAllRestaurants(@Header("x-access-token") token: String):Response<RestaurantResponse>
+    suspend fun getAllRestaurants(@Header("x-access-token") token: String): Response<RestaurantResponse>
+
+    @GET("api/restaurants/randomfood")
+    suspend fun getRandomFoods(@Header("x-access-token") token: String): Response<FoodResponse>
 }
