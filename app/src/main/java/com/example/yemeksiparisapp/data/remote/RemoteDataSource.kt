@@ -1,6 +1,7 @@
 package com.example.yemeksiparisapp.data.remote
 
 import com.example.yemeksiparisapp.data.entity.login.LoginRequest
+import com.example.yemeksiparisapp.data.entity.order.OrderRequest
 import com.example.yemeksiparisapp.data.entity.register.RegisterRequest
 import com.example.yemeksiparisapp.data.entity.restaurants.RestaurantRequest
 import com.example.yemeksiparisapp.utils.BaseDataSource
@@ -19,5 +20,11 @@ class RemoteDataSource @Inject constructor(
     suspend fun getRandomFoods(token: String) = getResult { foodApiService.getRandomFoods(token) }
 
     suspend fun getRestaurantbyId(restaurant_id:String,token: String) = getResult { foodApiService.getRestaurantbyId(restaurant_id,token) }
+
+    suspend fun orderFood(token: String, order:OrderRequest) = getResult { foodApiService.orderFood(token,order) }
+
+    suspend fun getUserInfo(token: String) = getResult { foodApiService.getUserInfo(token) }
+
+
 
 }

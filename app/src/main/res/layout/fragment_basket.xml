@@ -60,7 +60,7 @@
                 android:text="Total"
                 android:textColor="@color/white"
                 android:textSize="22sp"
-                app:layout_constraintStart_toStartOf="@+id/appCompatButton3"
+                app:layout_constraintStart_toStartOf="@+id/orderbutton"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -70,12 +70,12 @@
                 android:text="$100"
                 android:textColor="@color/white"
                 android:textSize="22sp"
-                app:layout_constraintEnd_toEndOf="@+id/appCompatButton3"
+                app:layout_constraintEnd_toEndOf="@+id/orderbutton"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/appCompatButton3"
+                android:id="@+id/orderbutton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"

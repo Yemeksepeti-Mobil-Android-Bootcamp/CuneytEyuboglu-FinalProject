@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/app_bg_decor"
+    android:layout_gravity="center">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/lottiesuccess"
+        android:textColor="@color/white"
+        android:fontFamily="@font/bentonsans_medium"
+        android:text="Order Successful"/>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottiesuccess"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:lottie_rawRes="@raw/successanimation"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        android:layout_centerInParent="true"
+        android:elevation="10dp"
+        />
+
+
+</RelativeLayout>

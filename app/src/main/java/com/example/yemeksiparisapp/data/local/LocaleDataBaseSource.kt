@@ -19,5 +19,9 @@ class LocaleDataBaseSource @Inject constructor(
         return sqLiteDbManager.addFoodtoBasket(food)
     }
 
+    fun emptyBasket(){
+        sqLiteDbManager.emptyBasket()
+    }
+
 
 }

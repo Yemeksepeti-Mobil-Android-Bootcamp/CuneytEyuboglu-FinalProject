@@ -81,5 +81,7 @@ dependencies {
 
     implementation 'com.tbuonomo:dotsindicator:4.2'
 
+    implementation 'com.airbnb.android:lottie:4.0.0'
+
 
 }

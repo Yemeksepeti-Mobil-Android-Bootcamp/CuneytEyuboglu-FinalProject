@@ -1,71 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     android:background="@drawable/app_bg_decor"
     tools:context=".ui.restaurantdetail.RestaurantDetailFragment">
-    <RelativeLayout
+
+    <ImageView
+        android:id="@+id/profileImg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:scaleType="center"
+        android:src="@drawable/ic_launcher_background" />
 
-        <ImageView
-            android:id="@+id/restaurantDetailimg"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_alignParentTop="true"
-            android:scaleType="center"
-            android:src="@drawable/ic_launcher_background" />
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/restaurantDetailimg"
-            android:padding="10dp"
-            >
-            <TextView
-                android:id="@+id/restaurantDetailName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/bentonsans_bold"
-                android:text="Cüneyt Eyüboğlu"
-                android:textColor="@color/white"
-                android:textSize="27sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/profileName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bentonsans_bold"
+        android:text="Cüneyt Eyüboğlu"
+        android:textColor="@color/white"
+        android:textSize="27sp"
+        android:layout_below="@+id/profileImg" />
 
-            <TextView
-                android:id="@+id/restaurantDetailDesc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ankara, TR"
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/restaurantDetailName" />
+    <TextView
+        android:id="@+id/profileUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ankara, TR"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:layout_below="@id/profileName"/>
 
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Email"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/restaurantDetailDesc" />
+    <TextView
+        android:id="@+id/profileEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Email"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_below="@id/profileUsername" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Adress"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+    <TextView
+        android:id="@+id/prevText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Previous Orders"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_below="@id/profileEmail"  />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </RelativeLayout>
-</ScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="?actionBarSize"
+        android:layout_below="@id/prevText"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/row_homefoods"
+        />
+</RelativeLayout>
+
 

@@ -5,20 +5,42 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.yemeksiparisapp.R
+import androidx.fragment.app.viewModels
+import com.bumptech.glide.Glide
+import com.example.yemeksiparisapp.databinding.FragmentProfileBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-    }
+    private lateinit var _binding: FragmentProfileBinding
+    private val viewModel: ProfileViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater,container,false)
+        return _binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val token = viewModel.getToken()
+        token?.let{
+            viewModel.getUserInfo(it).observe(viewLifecycleOwner,{
+                it.data?.let{
+                    println(it)
+                    _binding.profileName.text = it.userinfo.namesurname
+                    _binding.profileEmail.text = it.userinfo.email
+                    _binding.profileUsername.text = it.userinfo.username
+                    Glide.with(_binding.root.context)
+                        .load("https://cutewallpaper.org/21/venom-face-logo/face-venom.png")
+                        .into(_binding.profileImg)
+
+                }
+            })
+        }
     }
 
 

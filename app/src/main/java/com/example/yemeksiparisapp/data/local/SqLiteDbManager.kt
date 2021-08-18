@@ -61,4 +61,10 @@ class SqLiteDbManager(context: Context): SQLiteOpenHelper(context,"orders",null,
         db.delete(table_name, "foodId=?", arrayOf(id.toString()))
         db.close()
     }
+
+    fun emptyBasket(){
+        val db = this.writableDatabase
+        db.delete(table_name,null,null)
+        db.close()
+    }
 }

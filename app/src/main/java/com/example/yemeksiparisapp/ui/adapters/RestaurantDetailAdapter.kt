@@ -39,9 +39,6 @@ class RestaurantDetailAdapter(private val onAddCallback: (Foodmenu) -> Unit): Re
         foodList?.let {
             holder.setItem(it[position])
             holder.binding.btnAddtoCart.setOnClickListener{View ->
-                /*val dbhelper = SqLiteDbManager(View.context)
-                val food = Foodmenu(it[position].foodimg,it[position].foodname,it[position].id,it[position].price)
-                dbhelper.insertFood(food)*/
                 onAddCallback(it[position])
                 var navController = Navigation.findNavController(View)
                 navController.navigate(R.id.action_restaurantDetailFragment_to_basketFragment)

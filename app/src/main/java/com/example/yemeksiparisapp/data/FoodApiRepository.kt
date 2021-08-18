@@ -1,6 +1,7 @@
 package com.example.yemeksiparisapp.data
 
 import com.example.yemeksiparisapp.data.entity.login.LoginRequest
+import com.example.yemeksiparisapp.data.entity.order.OrderRequest
 import com.example.yemeksiparisapp.data.entity.register.RegisterRequest
 import com.example.yemeksiparisapp.data.entity.restaurants.Foodmenu
 import com.example.yemeksiparisapp.data.local.LocaleDataBaseSource
@@ -50,4 +51,14 @@ class FoodApiRepository @Inject constructor(
     fun getAllBasketFoods() = localeDataBaseSource.getAllBasketFoods()
 
     fun addFoodtoBasket(food:Foodmenu) = localeDataBaseSource.addFoodtoBasket(food)
+
+    fun orderFood(token:String, order: OrderRequest) = performNetworkOperation {
+        remoteDataSource.orderFood(token,order)
+    }
+
+    fun emptyBasket() = localeDataBaseSource.emptyBasket()
+
+    fun getUserInfo(token:String) = performNetworkOperation {
+        remoteDataSource.getUserInfo(token)
+    }
 }
