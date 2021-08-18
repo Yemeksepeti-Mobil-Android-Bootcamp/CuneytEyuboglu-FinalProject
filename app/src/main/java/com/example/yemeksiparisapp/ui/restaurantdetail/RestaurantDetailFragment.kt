@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.example.yemeksiparisapp.R
+import com.example.yemeksiparisapp.data.entity.restaurants.Foodmenu
 import com.example.yemeksiparisapp.databinding.FragmentLoginBinding
 import com.example.yemeksiparisapp.databinding.FragmentRestaurantDetailBinding
 import com.example.yemeksiparisapp.ui.adapters.FoodListAdapter
@@ -22,7 +23,7 @@ class RestaurantDetailFragment : Fragment() {
 
     private lateinit var _binding : FragmentRestaurantDetailBinding
     private val viewModel : RestaurantViewModel by viewModels()
-    private var restaurantDetailAdapter: RestaurantDetailAdapter = RestaurantDetailAdapter()
+    private var restaurantDetailAdapter: RestaurantDetailAdapter = RestaurantDetailAdapter(::onAddFood)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -56,6 +57,9 @@ class RestaurantDetailFragment : Fragment() {
 
         }
 
+    }
+    private fun onAddFood(item: Foodmenu){
+        viewModel.addFoodtoBasket(item)
     }
 
 }

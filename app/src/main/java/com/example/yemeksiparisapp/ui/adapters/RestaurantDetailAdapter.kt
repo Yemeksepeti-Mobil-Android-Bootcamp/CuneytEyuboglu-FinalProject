@@ -2,13 +2,16 @@ package com.example.yemeksiparisapp.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.yemeksiparisapp.data.entity.foods.Randomfoodlist
+import com.example.yemeksiparisapp.R
 import com.example.yemeksiparisapp.data.entity.restaurants.Foodmenu
+import com.example.yemeksiparisapp.data.local.SqLiteDbManager
 import com.example.yemeksiparisapp.databinding.RowRestdetailfoodsBinding
 
-class RestaurantDetailAdapter: RecyclerView.Adapter<RestaurantDetailAdapter.ViewHolder>() {
+class RestaurantDetailAdapter(private val onAddCallback: (Foodmenu) -> Unit): RecyclerView.Adapter<RestaurantDetailAdapter.ViewHolder>() {
 
     var foodList : List<Foodmenu>? = null
 
@@ -16,6 +19,7 @@ class RestaurantDetailAdapter: RecyclerView.Adapter<RestaurantDetailAdapter.View
 
         fun setItem(item: Foodmenu) {
             Glide.with(binding.root.context).load(item.foodimg).into(binding.imageView2)
+            binding.restDetailFoodPrice.text = "$${item.price}"
             binding.textView4.text = item.foodname
         }
     }
@@ -34,6 +38,14 @@ class RestaurantDetailAdapter: RecyclerView.Adapter<RestaurantDetailAdapter.View
     ) {
         foodList?.let {
             holder.setItem(it[position])
+            holder.binding.btnAddtoCart.setOnClickListener{View ->
+                /*val dbhelper = SqLiteDbManager(View.context)
+                val food = Foodmenu(it[position].foodimg,it[position].foodname,it[position].id,it[position].price)
+                dbhelper.insertFood(food)*/
+                onAddCallback(it[position])
+                var navController = Navigation.findNavController(View)
+                navController.navigate(R.id.action_restaurantDetailFragment_to_basketFragment)
+            }
         }
     }
 

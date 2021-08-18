@@ -14,7 +14,7 @@
         android:background="@drawable/restdetailcard">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/BasketFoodimg"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:src="@drawable/ic_launcher_background"
@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/BasketFoodName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -30,24 +30,24 @@
             android:text="Herbal Pancake"
             android:textColor="@color/white"
             android:textSize="15sp"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+            app:layout_constraintStart_toEndOf="@+id/BasketFoodimg"
+            app:layout_constraintTop_toTopOf="@+id/BasketFoodimg" />
 
         <TextView
-            android:id="@+id/restDetailFoodPrice"
+            android:id="@+id/BasketFoodPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/bentonsans_medium"
             android:text="$7"
             android:textColor="@color/active_tab_color"
             android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintStart_toStartOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintBottom_toBottomOf="@+id/BasketFoodimg"
+            app:layout_constraintStart_toStartOf="@+id/BasketFoodName"
+            app:layout_constraintTop_toBottomOf="@+id/BasketFoodName" />
 
         <ImageButton
-            android:id="@+id/btn_addtoCart"
-            android:src="@drawable/ic_baseline_add_shopping_cart_24"
+            android:id="@+id/btn_removefromCart"
+            android:src="@drawable/ic_baseline_remove_shopping_cart_24"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="#00222222"

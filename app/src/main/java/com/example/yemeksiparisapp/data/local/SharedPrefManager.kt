@@ -6,7 +6,7 @@ import android.content.SharedPreferences
 class SharedPrefManager(context: Context) {
 
     companion object {
-        const val TOKEN = "com.example.yemeksepeti_mobil_android_teame_hw3.TOKEN"
+        const val TOKEN = "com.example.yemeksiparisapp.TOKEN"
     }
 
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences("sharedPreferencesUtil", Context.MODE_PRIVATE)

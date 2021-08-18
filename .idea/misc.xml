@@ -6,6 +6,7 @@
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/drawable/button.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/drawable/button_outline.xml" value="0.3828125" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/drawable/button_white_outline.xml" value="0.3828125" />
+        <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/drawable/restdetailcard.xml" value="0.3828125" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/activity_auth.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/activity_start.xml" value="0.36666666666666664" />
@@ -20,9 +21,10 @@
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/fragment_restaurant_detail.xml" value="0.25" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/onboarding_item1.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/onboarding_item2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/row_basketfood.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/row_homefoods.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/row_homerestaurants.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/row_restdetailfoods.xml" value="0.5442670537010159" />
+        <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/row_restdetailfoods.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
       </map>
     </option>

@@ -13,4 +13,5 @@ class LocaleDataSource @Inject constructor(
     fun getToken(): String? {
         return sharedPrefManager.getToken()
     }
+
 }
