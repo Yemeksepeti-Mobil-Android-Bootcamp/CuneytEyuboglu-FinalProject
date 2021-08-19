@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.appcompat.widget.SearchView
 import com.example.yemeksiparisapp.R
 import com.example.yemeksiparisapp.databinding.FragmentHomeBinding
 import com.example.yemeksiparisapp.ui.adapters.FoodListAdapter
@@ -14,7 +15,7 @@ import com.example.yemeksiparisapp.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(){
 
     private lateinit var _binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by viewModels()
@@ -34,7 +35,7 @@ class HomeFragment : Fragment() {
         _binding.RestaurantsRecyclerView.adapter = restaurantListRvAdapter
         _binding.FoodsRecyclerView.adapter = foodListRvAdapter
         val token = viewModel.getToken()
-        //println("benim token: "+token)
+        setupSearchview()
 
         if (token != null) {
             viewModel.getAllRestaurants(token).observe(viewLifecycleOwner,{
@@ -45,7 +46,7 @@ class HomeFragment : Fragment() {
                     Resource.Status.SUCCESS -> {
                         it.data?.let {
                             restaurantListRvAdapter.restaurantList = it
-                            restaurantListRvAdapter.notifyDataSetChanged()
+                            restaurantListRvAdapter.addData()
                         }
                     }
                     Resource.Status.ERROR -> {
@@ -73,4 +74,20 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun setupSearchview(){
+        val searchvw = _binding.searchView
+        searchvw.setOnQueryTextListener(object:  SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                restaurantListRvAdapter.filter.filter(p0)
+                return false
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                restaurantListRvAdapter.filter.filter(p0)
+                return false
+            }
+        })
+    }
+
 }
+

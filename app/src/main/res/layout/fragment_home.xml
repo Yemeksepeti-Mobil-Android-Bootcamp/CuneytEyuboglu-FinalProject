@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:background="#252525"
             app:layout_constraintTop_toBottomOf="@+id/homeHeader"
-            app:queryHint="Search Your Food" />
+            app:queryHint="Find a Restaurant" />
 
         <TextView
             android:id="@+id/textView"
