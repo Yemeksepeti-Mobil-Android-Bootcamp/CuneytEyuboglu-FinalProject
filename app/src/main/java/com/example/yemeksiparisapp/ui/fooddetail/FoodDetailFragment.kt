@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
+import com.example.yemeksiparisapp.R
 import com.example.yemeksiparisapp.databinding.FragmentFoodDetailBinding
 import com.example.yemeksiparisapp.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,6 +32,7 @@ class FoodDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val foodItemId = arguments?.getString("foodItemId")
         println(foodItemId)
+        var navController = Navigation.findNavController(view)
         val token = viewModel.getToken()
         if(token!=null && foodItemId!=null) {
             viewModel.getFoodById(foodItemId,token).observe(viewLifecycleOwner,{
@@ -39,6 +42,10 @@ class FoodDetailFragment : Fragment() {
                         it.data?.randomfoodlist?.let{
                             _binding.foodDetailName.text = it[0].foodname
                             Glide.with(_binding.root.context).load(it[0].foodimg).into(_binding.foodDetailimg)
+                            _binding.detailAddBasketbtn.setOnClickListener{ View ->
+                                viewModel.addFoodtoBasket(it[0])
+                                navController.navigate(R.id.action_foodDetailFragment_to_basketFragment)
+                            }
                         }
                     }
                     Resource.Status.ERROR -> {}

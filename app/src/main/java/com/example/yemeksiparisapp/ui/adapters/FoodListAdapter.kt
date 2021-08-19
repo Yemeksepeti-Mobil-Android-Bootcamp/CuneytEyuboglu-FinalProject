@@ -8,11 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.yemeksiparisapp.R
 import com.example.yemeksiparisapp.data.entity.foods.FoodResponse
-import com.example.yemeksiparisapp.data.entity.foods.Randomfoodlist
-import com.example.yemeksiparisapp.data.entity.restaurants.RestaurantResponse
-import com.example.yemeksiparisapp.data.entity.restaurants.RestaurantResponseItem
+import com.example.yemeksiparisapp.data.entity.restaurants.Foodmenu
 import com.example.yemeksiparisapp.databinding.RowHomefoodsBinding
-import com.example.yemeksiparisapp.databinding.RowHomerestaurantsBinding
 
 
 class FoodListAdapter: RecyclerView.Adapter<FoodListAdapter.ViewHolder>() {
@@ -21,7 +18,7 @@ class FoodListAdapter: RecyclerView.Adapter<FoodListAdapter.ViewHolder>() {
 
     class ViewHolder(var binding: RowHomefoodsBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun setItem(item: Randomfoodlist) {
+        fun setItem(item: Foodmenu) {
             Glide.with(binding.root.context).load(item.foodimg).into(binding.imageView2)
             binding.textView4.text = item.foodname
         }
