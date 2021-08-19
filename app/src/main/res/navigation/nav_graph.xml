@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_restaurantDetailFragment"
             app:destination="@id/restaurantDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
     </fragment>
 
     <fragment
@@ -32,6 +35,15 @@
         tools:layout="@layout/fragment_restaurant_detail" >
         <action
             android:id="@+id/action_restaurantDetailFragment_to_basketFragment"
+            app:destination="@id/basketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.example.yemeksiparisapp.ui.fooddetail.FoodDetailFragment"
+        android:label="fragment_food_detail"
+        tools:layout="@layout/fragment_food_detail" >
+        <action
+            android:id="@+id/action_foodDetailFragment_to_basketFragment"
             app:destination="@id/basketFragment" />
     </fragment>
 

@@ -1,6 +1,7 @@
 package com.example.yemeksiparisapp.data.entity.user
 
 
+import com.example.yemeksiparisapp.data.entity.foods.Randomfoodlist
 import com.google.gson.annotations.SerializedName
 
 data class Userinfo(
@@ -13,7 +14,7 @@ data class Userinfo(
     @SerializedName("password")
     val password: String,
     @SerializedName("previousOrders")
-    val previousOrders: List<Any>,
+    val previousOrders: List<Randomfoodlist>,
     @SerializedName("username")
     val username: String,
     @SerializedName("__v")

@@ -25,6 +25,6 @@ class RemoteDataSource @Inject constructor(
 
     suspend fun getUserInfo(token: String) = getResult { foodApiService.getUserInfo(token) }
 
-
+    suspend fun getFoodById(foodId:String,token:String)= getResult { foodApiService.getFoodById(foodId,token) }
 
 }

@@ -9,12 +9,12 @@
     android:background="@drawable/app_bg_decor"
     tools:context=".ui.restaurantdetail.RestaurantDetailFragment">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profileImg"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_alignParentTop="true"
-        android:scaleType="center"
+        android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background" />
 
     <TextView
@@ -32,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ankara, TR"
+        android:fontFamily="@font/bentonsans_regular"
         android:textColor="@color/white"
         android:textSize="12sp"
         android:layout_below="@id/profileName"/>
@@ -42,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Email"
+        android:fontFamily="@font/bentonsans_regular"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:layout_below="@id/profileUsername" />
@@ -50,21 +52,23 @@
         android:id="@+id/prevText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Previous Orders"
-        android:textColor="@color/white"
-        android:textSize="18sp"
+        android:layout_below="@id/profileEmail"
         android:gravity="center"
-        android:layout_below="@id/profileEmail"  />
+        android:text="Previous Orders"
+        android:fontFamily="@font/bentonsans_medium"
+        android:layout_margin="5dp"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/profileRv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="?actionBarSize"
         android:layout_below="@id/prevText"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
-        tools:listitem="@layout/row_homefoods"
-        />
+        android:paddingBottom="?actionBarSize"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_homefoods" />
 </RelativeLayout>
 
 

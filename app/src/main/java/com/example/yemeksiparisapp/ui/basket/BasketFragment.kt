@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.HandlerCompat.postDelayed
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.switchMap
@@ -48,24 +49,27 @@ class BasketFragment : Fragment() {
             BasketRvAdapter.notifyDataSetChanged()
         })
         _binding.orderbutton.setOnClickListener{
-            popupHandler()
-            token?.let {
-                var orderedFoods = OrderRequest(viewModel.basketfoodlist.value)
-                viewModel.orderFood(it,orderedFoods).observe(viewLifecycleOwner,{
-                    when(it.status){
-                        Resource.Status.LOADING -> {}
-                        Resource.Status.SUCCESS -> {
-                            it.data?.let{
-                                if (it.status == "success"){
-                                    viewModel.emptyBasket()
-                                    viewModel.getBasketFoods()
+            if (viewModel.basketfoodlist.value?.size !=0){
+                popupHandler()
+                token?.let {
+                    var orderedFoods = OrderRequest(viewModel.basketfoodlist.value)
+                    viewModel.orderFood(it,orderedFoods).observe(viewLifecycleOwner,{
+                        when(it.status){
+                            Resource.Status.LOADING -> {}
+                            Resource.Status.SUCCESS -> {
+                                it.data?.let{
+                                    if (it.status == "success"){
+                                        viewModel.emptyBasket()
+                                        viewModel.getBasketFoods()
+                                    }
                                 }
                             }
+                            Resource.Status.ERROR -> {}
                         }
-                        Resource.Status.ERROR -> {}
-                    }
-                })
-
+                    })
+                }
+            } else {
+                Toast.makeText(requireContext(),"Your Basket is empty",Toast.LENGTH_LONG).show()
             }
         }
 

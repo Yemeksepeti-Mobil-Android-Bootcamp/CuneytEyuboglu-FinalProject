@@ -75,13 +75,18 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.7'
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-
+    //okhttp client
     implementation("com.squareup.okhttp3:okhttp")
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
-
+    //dots indicator
     implementation 'com.tbuonomo:dotsindicator:4.2'
-
+    //lottie
     implementation 'com.airbnb.android:lottie:4.0.0'
+    //circular image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation  'com.fxn769:bubbletabbar:1.0.6'
+
 
 
 }

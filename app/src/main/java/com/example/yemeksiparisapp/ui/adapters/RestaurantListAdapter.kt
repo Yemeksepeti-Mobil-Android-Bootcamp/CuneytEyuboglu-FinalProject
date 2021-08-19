@@ -42,7 +42,6 @@ class RestaurantListAdapter: RecyclerView.Adapter<RestaurantListAdapter.ViewHold
                 val bundle = bundleOf("restaurantId" to it[position].id)
                 var navController = Navigation.findNavController(View)
                 navController.navigate(R.id.action_homeFragment_to_restaurantDetailFragment, bundle)
-
             }
         }
 

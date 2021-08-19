@@ -16,13 +16,13 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <com.fxn.BubbleTabBar
         android:id="@+id/bottom_nav_view"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        app:menu="@menu/bottom_nav_menu"
-        android:background="#0D0D0D"
-        android:theme="@style/BottomNavigationTheme"
+        app:bubbletab_title_size="12sp"
+        app:bubbletab_menuResource="@menu/bottom_nav_menu"
         android:layout_gravity="bottom"
-        />
+        app:bubbletab_custom_font="@font/bentonsans_medium"
+        android:background="#0D0D0D"/>
 </FrameLayout>

@@ -38,4 +38,7 @@ interface FoodApiService {
     @GET("api/user/userinfo")
     suspend fun getUserInfo(@Header("x-access-token") token: String): Response<UserInfoResponse>
 
+    @GET("api/restaurants/searchfood/{food_id}")
+    suspend fun getFoodById(@Path("food_id") food_id:String,
+                            @Header("x-access-token")token: String) : Response<FoodResponse>
 }

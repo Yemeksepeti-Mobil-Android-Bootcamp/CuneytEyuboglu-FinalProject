@@ -3,13 +3,17 @@
     <item
         android:id="@+id/homeFragment"
         android:title="Home"
-        android:icon="@drawable/ic_baseline_home_24" />
+        android:checked="true"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:color="@color/active_tab_color"/>
     <item
         android:id="@+id/basketFragment"
         android:title="Basket"
-        android:icon="@drawable/ic_baseline_shopping_cart_24"/>
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        android:color="@color/active_tab_color"/>
     <item
         android:id="@+id/profileFragment"
         android:title="Profile"
-        android:icon="@drawable/ic_baseline_person2_24"/>
+        android:icon="@drawable/ic_baseline_person2_24"
+        android:color="@color/active_tab_color"/>
 </menu>

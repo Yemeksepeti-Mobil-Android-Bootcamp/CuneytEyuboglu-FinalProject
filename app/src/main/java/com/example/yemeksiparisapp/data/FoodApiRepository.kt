@@ -61,4 +61,8 @@ class FoodApiRepository @Inject constructor(
     fun getUserInfo(token:String) = performNetworkOperation {
         remoteDataSource.getUserInfo(token)
     }
+
+    fun getFoodById(foodId:String,token: String) = performNetworkOperation {
+        remoteDataSource.getFoodById(foodId,token)
+    }
 }
