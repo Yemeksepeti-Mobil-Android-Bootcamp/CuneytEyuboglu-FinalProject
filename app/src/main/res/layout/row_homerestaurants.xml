@@ -12,7 +12,7 @@
         android:layout_height="170dp"
         android:orientation="vertical"
         android:padding="15dp"
-        android:background="#D0000000"
+        android:background="@drawable/restdetailcard"
         android:gravity="center">
 
         <ImageView
@@ -29,7 +29,7 @@
             android:fontFamily="@font/bentonsans_medium"
             android:layout_marginTop="10dp"
             android:text="Burger King"
-            android:textColor="@color/white"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp" />
     </LinearLayout>
 

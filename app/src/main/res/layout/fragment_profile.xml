@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    android:background="@drawable/app_bg_decor"
+    android:background="?attr/background"
     tools:context=".ui.restaurantdetail.RestaurantDetailFragment">
 
     <ProgressBar
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bentonsans_bold"
         android:text=""
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="27sp"
         android:layout_below="@+id/profileImg" />
 
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:text=""
         android:fontFamily="@font/bentonsans_regular"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="12sp"
         android:layout_below="@id/profileName"/>
 
@@ -51,7 +51,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/bentonsans_regular"
         android:text=""
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="18sp" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -65,6 +65,7 @@
         android:text="Sign Out"
         android:textAllCaps="false"
         android:textColor="@color/active_tab_color" />
+    
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headercontainer"
@@ -82,7 +83,7 @@
             android:fontFamily="@font/bentonsans_medium"
             android:gravity="center"
             android:text="Previous Orders"
-            android:textColor="@color/white"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

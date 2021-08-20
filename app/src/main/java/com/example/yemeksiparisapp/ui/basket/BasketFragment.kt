@@ -44,14 +44,21 @@ class BasketFragment : Fragment() {
             it.forEach(){
                 totalPrice += it.price.toInt()
             }
-            _binding.totalPriceText.text = "$${totalPrice.toString()}"
+            _binding.totalPriceText.text = "$${totalPrice}"
             BasketRvAdapter.cartList = it
             BasketRvAdapter.notifyDataSetChanged()
         })
+        orderButtonListener(token)
+
+    }
+
+    private fun orderButtonListener(token:String?) {
         _binding.orderbutton.setOnClickListener{
+            totalPrice = 0
+            _binding.totalPriceText.text = "$${totalPrice}"
             if (viewModel.basketfoodlist.value?.size !=0){
-                popupHandler()
                 token?.let {
+                    popupHandler()
                     var orderedFoods = OrderRequest(viewModel.basketfoodlist.value)
                     viewModel.orderFood(it,orderedFoods).observe(viewLifecycleOwner,{
                         when(it.status){
@@ -72,7 +79,6 @@ class BasketFragment : Fragment() {
                 Toast.makeText(requireContext(),"Your Basket is empty",Toast.LENGTH_LONG).show()
             }
         }
-
     }
 
     private fun onRemoveFood(item:Foodmenu,allItems:ArrayList<Foodmenu>){

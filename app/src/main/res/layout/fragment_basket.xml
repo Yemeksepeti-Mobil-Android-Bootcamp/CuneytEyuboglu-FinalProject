@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_bg_decor"
     android:paddingVertical="?actionBarSize"
     tools:context=".ui.basket.BasketFragment">
     <TextView
@@ -16,7 +15,7 @@
         android:layout_marginEnd="14dp"
         android:fontFamily="@font/bentonsans_bold"
         android:text="My Basket"
-        android:textColor="@color/white"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +40,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="5dp"
         app:cardCornerRadius="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

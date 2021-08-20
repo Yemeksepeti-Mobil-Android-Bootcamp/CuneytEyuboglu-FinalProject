@@ -31,7 +31,6 @@ class FoodDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val foodItemId = arguments?.getString("foodItemId")
-        println(foodItemId)
         var navController = Navigation.findNavController(view)
         val token = viewModel.getToken()
         if(token!=null && foodItemId!=null) {

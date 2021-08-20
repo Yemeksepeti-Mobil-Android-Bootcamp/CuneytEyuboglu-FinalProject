@@ -40,9 +40,6 @@ class RestaurantListAdapter: RecyclerView.Adapter<RestaurantListAdapter.ViewHold
         holder: ViewHolder,
         position: Int
     ) {
-        println("onbind")
-        println(filteredRestaurantList)
-        println(restaurantList)
         filteredRestaurantList?.let {
             holder.setItem(it[position])
             holder.binding.restrowCard.setOnClickListener{ View ->
@@ -84,18 +81,14 @@ class RestaurantListAdapter: RecyclerView.Adapter<RestaurantListAdapter.ViewHold
                 }
                 val filterResults = FilterResults()
                 filterResults.values = filteredRestaurantList
-                println("filteredlist: "+filteredRestaurantList)
                 return filterResults
             }
 
-
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                println(results!!.values)
-                if (results.values == null){
+                if (results!!.values == null){
                     filteredRestaurantList = RestaurantResponse()
                 }  else {
                     results.values as RestaurantResponse
-                    println("val: "+results.values)
                     notifyDataSetChanged()
                 }
             }

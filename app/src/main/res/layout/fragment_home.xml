@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_bg_decor"
+    android:background="?attr/background"
     tools:context=".ui.home.HomeFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 android:textSize="28dp"
                 android:fontFamily="@font/bentonsans_bold"
                 android:layout_weight="2"
-                android:textColor="@color/white"  />
+                android:textColor="?attr/colorOnPrimary"  />
 
         </LinearLayout>
 
@@ -37,9 +37,10 @@
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#252525"
+            android:background="?attr/colorPrimary"
             app:layout_constraintTop_toBottomOf="@+id/homeHeader"
-            app:queryHint="Find a Restaurant" />
+            app:queryHint="Find a Restaurant"
+            app:defaultQueryHint="Find a Restaurant"/>
 
         <TextView
             android:id="@+id/textView"
@@ -48,7 +49,7 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/bentonsans_bold"
             android:text="Restaurants"
-            android:textColor="@color/white"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@+id/searchView"
             app:layout_constraintTop_toBottomOf="@+id/searchView" />
@@ -89,7 +90,7 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/bentonsans_bold"
             android:text="Popular Foods"
-            android:textColor="@color/white"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@+id/RestaurantsRecyclerView"
             app:layout_constraintTop_toBottomOf="@+id/shimmerRestContainer" />

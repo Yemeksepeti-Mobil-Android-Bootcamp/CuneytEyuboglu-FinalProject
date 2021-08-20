@@ -35,8 +35,6 @@ class BasketViewModel@Inject constructor(
     }
 
     fun orderFood(token:String, order: OrderRequest) : LiveData<Resource<OrderResponse>> {
-        println("vim: "+token+order)
-
         return foodApiRepository.orderFood(token,order)
     }
 

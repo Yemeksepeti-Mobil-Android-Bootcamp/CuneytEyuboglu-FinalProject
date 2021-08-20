@@ -6,11 +6,9 @@ import com.example.yemeksiparisapp.data.entity.login.LoginResponse
 import kotlinx.coroutines.Dispatchers
 
 fun <T> performNetworkOperation(call: suspend () -> Resource<T>) : LiveData<Resource<T>> {
-    println("performnetwork worked")
     return liveData(Dispatchers.IO) {
         emit(Resource.loading())
         val networkCall = call.invoke()
-        println(networkCall)
         if(networkCall.status == Resource.Status.SUCCESS) {
             val data = networkCall.data!!
             emit(Resource.success(data))

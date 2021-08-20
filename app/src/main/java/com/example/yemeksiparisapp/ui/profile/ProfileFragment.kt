@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.example.yemeksiparisapp.AuthActivity
+import com.example.yemeksiparisapp.R
 import com.example.yemeksiparisapp.databinding.FragmentProfileBinding
 import com.example.yemeksiparisapp.ui.adapters.PreviousOrdersAdapter
 import com.example.yemeksiparisapp.utils.Resource

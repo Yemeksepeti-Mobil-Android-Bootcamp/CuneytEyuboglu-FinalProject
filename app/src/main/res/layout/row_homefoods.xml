@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="20dp"
-        android:background="#CC000000">
+        android:background="@drawable/button_outline">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -29,7 +29,7 @@
             android:layout_marginStart="20dp"
             android:fontFamily="@font/bentonsans_medium"
             android:text="Herbal Pancake"
-            android:textColor="@color/white"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView2"
             app:layout_constraintStart_toEndOf="@+id/imageView2"

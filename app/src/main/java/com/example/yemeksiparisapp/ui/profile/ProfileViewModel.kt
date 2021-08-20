@@ -27,7 +27,6 @@ class ProfileViewModel @Inject constructor(
     }
 
     fun clearOrders(token:String):LiveData<Resource<OrderResponse>>{
-        println("clearing orders")
         return foodApiRepository.clearOrders(token)
     }
 

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_bg_decor"
+    android:background="?attr/background"
     android:paddingBottom="?actionBarSize"
     tools:context=".ui.restaurantdetail.RestaurantDetailFragment">
     <RelativeLayout
@@ -37,7 +37,7 @@
                 android:fontFamily="@font/bentonsans_bold"
                 android:gravity="center"
                 android:text=" "
-                android:textColor="@color/white"
+                android:textColor="?attr/colorOnPrimary"
                 android:textSize="27sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text=" "
-                android:textColor="@color/white"
+                android:textColor="?attr/colorOnPrimary"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
                 android:gravity="center"
                 android:text="Menu"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/white"
+                android:textColor="?attr/colorOnPrimary"
                 android:textSize="27sp"
                 app:layout_constraintTop_toBottomOf="@+id/restaurantDetailDesc"
                 tools:layout_editor_absoluteX="10dp" />
