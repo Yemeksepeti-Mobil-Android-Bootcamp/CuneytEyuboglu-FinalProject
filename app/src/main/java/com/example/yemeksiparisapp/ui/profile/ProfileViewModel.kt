@@ -3,7 +3,7 @@ package com.example.yemeksiparisapp.ui.profile
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.yemeksiparisapp.data.FoodApiRepository
-import com.example.yemeksiparisapp.data.entity.login.User
+import com.example.yemeksiparisapp.data.entity.order.OrderResponse
 import com.example.yemeksiparisapp.data.entity.user.UserInfoResponse
 import com.example.yemeksiparisapp.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -21,4 +21,15 @@ class ProfileViewModel @Inject constructor(
     fun getUserInfo(token:String):LiveData<Resource<UserInfoResponse>>{
         return foodApiRepository.getUserInfo(token)
     }
+
+    fun signOut(){
+        foodApiRepository.signOut()
+    }
+
+    fun clearOrders(token:String):LiveData<Resource<OrderResponse>>{
+        println("clearing orders")
+        return foodApiRepository.clearOrders(token)
+    }
+
+
 }

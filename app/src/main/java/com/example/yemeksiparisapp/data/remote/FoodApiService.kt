@@ -3,7 +3,6 @@ package com.example.yemeksiparisapp.data.remote
 import com.example.yemeksiparisapp.data.entity.foods.FoodResponse
 import com.example.yemeksiparisapp.data.entity.login.LoginRequest
 import com.example.yemeksiparisapp.data.entity.login.LoginResponse
-import com.example.yemeksiparisapp.data.entity.login.User
 import com.example.yemeksiparisapp.data.entity.order.OrderRequest
 import com.example.yemeksiparisapp.data.entity.order.OrderResponse
 import com.example.yemeksiparisapp.data.entity.register.RegisterRequest
@@ -41,4 +40,9 @@ interface FoodApiService {
     @GET("api/restaurants/searchfood/{food_id}")
     suspend fun getFoodById(@Path("food_id") food_id:String,
                             @Header("x-access-token")token: String) : Response<FoodResponse>
+
+    @POST("api/user/clearorders")
+    suspend fun clearOrders(@Header("x-access-token") token:String): Response<OrderResponse>
+
+
 }

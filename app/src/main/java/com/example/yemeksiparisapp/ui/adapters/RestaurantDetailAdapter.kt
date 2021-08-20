@@ -43,6 +43,11 @@ class RestaurantDetailAdapter(private val onAddCallback: (Foodmenu) -> Unit): Re
                 var navController = Navigation.findNavController(View)
                 navController.navigate(R.id.action_restaurantDetailFragment_to_basketFragment)
             }
+            holder.binding.restdetailfoodCard.setOnClickListener{View ->
+                val bundle = bundleOf("foodItemId" to it[position].id)
+                var navController = Navigation.findNavController(View)
+                navController.navigate(R.id.action_restaurantDetailFragment_to_foodDetailFragment, bundle)
+            }
         }
     }
 

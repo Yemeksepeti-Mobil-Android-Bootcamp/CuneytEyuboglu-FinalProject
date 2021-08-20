@@ -65,4 +65,8 @@ class FoodApiRepository @Inject constructor(
     fun getFoodById(foodId:String,token: String) = performNetworkOperation {
         remoteDataSource.getFoodById(foodId,token)
     }
+
+    fun clearOrders(token:String) = performNetworkOperation { remoteDataSource.clearOrders(token) }
+
+
 }

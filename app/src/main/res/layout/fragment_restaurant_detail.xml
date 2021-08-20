@@ -12,13 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ProgressBar
+            android:id="@+id/restaurantDetailProgressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"/>
         <ImageView
             android:id="@+id/restaurantDetailimg"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_alignParentTop="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher_background" />
+            android:scaleType="fitXY"  />
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bentonsans_bold"
                 android:gravity="center"
-                android:text="Burger King"
+                android:text=" "
                 android:textColor="@color/white"
                 android:textSize="27sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Most whole Alaskan Red King Crabs get broken down into legs, claws, and lump meat. We offer all of these options as well in our online shop, but there is nothing like getting the whole . . . ."
+                android:text=" "
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"

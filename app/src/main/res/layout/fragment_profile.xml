@@ -9,20 +9,26 @@
     android:background="@drawable/app_bg_decor"
     tools:context=".ui.restaurantdetail.RestaurantDetailFragment">
 
+    <ProgressBar
+        android:id="@+id/profileLoadingBar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"  />
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profileImg"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="170dp"
         android:layout_alignParentTop="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_background" />
+        android:scaleType="centerCrop"  />
 
     <TextView
         android:id="@+id/profileName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bentonsans_bold"
-        android:text="Cüneyt Eyüboğlu"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="27sp"
         android:layout_below="@+id/profileImg" />
@@ -31,7 +37,7 @@
         android:id="@+id/profileUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ankara, TR"
+        android:text=""
         android:fontFamily="@font/bentonsans_regular"
         android:textColor="@color/white"
         android:textSize="12sp"
@@ -41,30 +47,67 @@
         android:id="@+id/profileEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/profileUsername"
         android:layout_marginTop="10dp"
-        android:text="Email"
         android:fontFamily="@font/bentonsans_regular"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:layout_below="@id/profileUsername" />
-
-    <TextView
-        android:id="@+id/prevText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profileEmail"
-        android:gravity="center"
-        android:text="Previous Orders"
-        android:fontFamily="@font/bentonsans_medium"
-        android:layout_margin="5dp"
+        android:text=""
         android:textColor="@color/white"
         android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signoutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileEmail"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/button_white_outline"
+        android:fontFamily="@font/bentonsans_bold"
+        android:text="Sign Out"
+        android:textAllCaps="false"
+        android:textColor="@color/active_tab_color" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headercontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signoutBtn"
+        android:layout_marginHorizontal="15dp"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/prevText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:fontFamily="@font/bentonsans_medium"
+            android:gravity="center"
+            android:text="Previous Orders"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/clearOrdersBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/button_outline"
+            android:src="@drawable/ic_baseline_delete_forever_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/profileRv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/prevText"
+        android:layout_below="@id/headercontainer"
+        android:layout_marginHorizontal="15dp"
         android:orientation="vertical"
         android:paddingBottom="?actionBarSize"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

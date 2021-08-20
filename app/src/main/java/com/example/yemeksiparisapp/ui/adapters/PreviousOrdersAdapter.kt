@@ -18,7 +18,7 @@ class PreviousOrdersAdapter: RecyclerView.Adapter<PreviousOrdersAdapter.ViewHold
         fun setItem(item: Randomfoodlist) {
             Glide.with(binding.root.context).load(item.foodimg).into(binding.imageView2)
             binding.textView4.text = item.foodname
-            binding.textView5.text = item.price
+            binding.textView5.text = "$${item.price}"
         }
     }
 

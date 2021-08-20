@@ -38,11 +38,10 @@ class FoodListAdapter: RecyclerView.Adapter<FoodListAdapter.ViewHolder>() {
     ) {
         foodList?.let {
             holder.setItem(it.randomfoodlist[position])
-            holder.binding.imageView2.setOnClickListener{ View ->
+            holder.binding.homefoodCard.setOnClickListener{ View ->
                 val bundle = bundleOf("foodItemId" to it.randomfoodlist[position].id)
                 var navController = Navigation.findNavController(View)
                 navController.navigate(R.id.action_homeFragment_to_foodDetailFragment, bundle)
-
             }
         }
     }

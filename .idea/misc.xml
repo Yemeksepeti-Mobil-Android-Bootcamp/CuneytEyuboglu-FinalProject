@@ -11,6 +11,7 @@
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/activity_auth.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/activity_start.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/foodrow_placeholder.xml" value="0.23697916666666666" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/fragment_app_logo.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/fragment_basket.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/fragment_blank.xml" value="0.20520833333333333" />
@@ -29,6 +30,7 @@
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/row_homefoods.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/row_homerestaurants.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/row_restdetailfoods.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/layout/row_restplaceholder.xml" value="0.23697916666666666" />
         <entry key="..\:/Users/Atahan/AndroidStudioProjects/yemekSiparisApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
       </map>
     </option>

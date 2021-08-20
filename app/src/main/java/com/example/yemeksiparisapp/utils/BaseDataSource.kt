@@ -5,6 +5,7 @@ import java.lang.Exception
 
 abstract class BaseDataSource {
     protected suspend fun <T> getResult(call: suspend () -> Response<T>) : Resource<T> {
+        println("get result worked")
         try {
             val response = call()
             if(response.isSuccessful) {

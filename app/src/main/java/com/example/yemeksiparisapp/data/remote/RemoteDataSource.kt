@@ -3,7 +3,6 @@ package com.example.yemeksiparisapp.data.remote
 import com.example.yemeksiparisapp.data.entity.login.LoginRequest
 import com.example.yemeksiparisapp.data.entity.order.OrderRequest
 import com.example.yemeksiparisapp.data.entity.register.RegisterRequest
-import com.example.yemeksiparisapp.data.entity.restaurants.RestaurantRequest
 import com.example.yemeksiparisapp.utils.BaseDataSource
 import javax.inject.Inject
 
@@ -26,5 +25,8 @@ class RemoteDataSource @Inject constructor(
     suspend fun getUserInfo(token: String) = getResult { foodApiService.getUserInfo(token) }
 
     suspend fun getFoodById(foodId:String,token:String)= getResult { foodApiService.getFoodById(foodId,token) }
+
+    suspend fun clearOrders(token: String) = getResult { foodApiService.clearOrders(token) }
+
 
 }

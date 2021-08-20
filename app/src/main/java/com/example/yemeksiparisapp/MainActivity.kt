@@ -4,7 +4,6 @@ package com.example.yemeksiparisapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.*
-import com.example.yemeksiparisapp.data.local.SharedPrefManager
 import com.example.yemeksiparisapp.utils.onNavDestinationSelected
 import com.fxn.BubbleTabBar
 import dagger.hilt.android.AndroidEntryPoint

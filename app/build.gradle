@@ -87,6 +87,7 @@ dependencies {
 
     implementation  'com.fxn769:bubbletabbar:1.0.6'
 
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
 
 }

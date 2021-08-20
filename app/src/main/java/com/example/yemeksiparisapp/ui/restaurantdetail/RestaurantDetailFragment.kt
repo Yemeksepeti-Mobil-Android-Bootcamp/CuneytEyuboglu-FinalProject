@@ -41,9 +41,10 @@ class RestaurantDetailFragment : Fragment() {
         if (restaurant_id != null && token != null) {
             viewModel.getRestaurantById(restaurant_id,token).observe(viewLifecycleOwner,{
                 when(it.status){
-                    Resource.Status.LOADING -> {}
+                    Resource.Status.LOADING -> { }
                     Resource.Status.SUCCESS -> {
                         it.data?.let {
+                            _binding.restaurantDetailProgressBar.visibility = View.GONE
                             _binding.restaurantDetailName.text = it[0].name
                             _binding.restaurantDetailDesc.text = it[0].description
                             Glide.with(_binding.root.context).load(it[0].restaurantimgurl).into(_binding.restaurantDetailimg)

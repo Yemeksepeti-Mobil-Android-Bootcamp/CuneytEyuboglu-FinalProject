@@ -36,3 +36,4 @@ fun BubbleTabBar.onNavDestinationSelected(
         false
     }
 }
+
