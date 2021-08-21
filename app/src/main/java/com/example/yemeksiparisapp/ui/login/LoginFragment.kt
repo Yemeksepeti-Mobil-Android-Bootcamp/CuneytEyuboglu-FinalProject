@@ -36,18 +36,16 @@ class LoginFragment : Fragment() {
         }
 
         _binding.btnLogin.setOnClickListener{
-            val email = _binding.editTextName.text.toString()
+            val userIdentity = _binding.editTextName.text.toString()
             val password = _binding.editTextPassword.text.toString()
-            viewModel.login(email, password)
-                .observe(viewLifecycleOwner,{
-                    println(it)
+            viewModel.login(userIdentity, password).observe(viewLifecycleOwner,{
                     when(it.status){
                         Resource.Status.LOADING -> {
-                            println("loading...")
+                            _binding.loginProgressBar.visibility = View.VISIBLE
                         }
                         Resource.Status.SUCCESS -> {
-                            println("success!!!")
                             it.data?.let {
+                                _binding.loginProgressBar.visibility = View.GONE
                                 if(it.status == "fail"){
                                     Toast.makeText(context,"Authentication Failed",Toast.LENGTH_LONG).show()
                                 }else{
@@ -58,6 +56,7 @@ class LoginFragment : Fragment() {
                             }
                         }
                         Resource.Status.ERROR -> {
+                            _binding.loginProgressBar.visibility = View.GONE
                             Toast.makeText(context,"Connection Error",Toast.LENGTH_LONG).show()
                         }
                     }

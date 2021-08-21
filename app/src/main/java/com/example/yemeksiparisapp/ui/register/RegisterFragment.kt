@@ -31,17 +31,18 @@ class RegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         _binding.btnCreateAccount.setOnClickListener{
             val namesurname = _binding.RegisterEditTextName.text.toString()
-            val username = _binding.RegisterEditTextName.text.toString()
-            val email = _binding.RegisterEditTextName.text.toString()
-            val password = _binding.RegisterEditTextName.text.toString()
-            viewModel.register(email,namesurname,password,username)
+            val username = _binding.RegisterEditTextUserName.text.toString()
+            val email = _binding.RegisterEditTextEmail.text.toString()
+            val password = _binding.RegisterEditTextPassword.text.toString()
+            viewModel.register(namesurname,email,password,username)
                 .observe(viewLifecycleOwner, {
                     when(it.status){
                         Resource.Status.LOADING -> {
-                            println("loading...")
+                            _binding.registerProgressBar.visibility = View.VISIBLE
                         }
                         Resource.Status.SUCCESS -> {
                             it.data?.let {
+                                _binding.registerProgressBar.visibility = View.GONE
                                 if(it.status == "success") {
                                     viewModel.saveToken(it.token)
                                     val intent = Intent(context, MainActivity::class.java)
@@ -53,6 +54,7 @@ class RegisterFragment : Fragment() {
                             }
                         }
                         Resource.Status.ERROR -> {
+                            _binding.registerProgressBar.visibility = View.GONE
                             Toast.makeText(context,"Connection Error", Toast.LENGTH_LONG).show()
                         }
 

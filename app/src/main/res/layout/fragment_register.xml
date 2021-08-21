@@ -50,6 +50,7 @@
             android:paddingStart="20sp"
             android:paddingTop="16sp"
             android:drawableStart="@drawable/ic_baseline_tag_faces_24"
+            android:drawablePadding="10dp"
             android:textColor="?attr/colorOnPrimary"
             android:fontFamily="@font/bentonsans_medium"
             android:textSize="14sp" />
@@ -74,6 +75,7 @@
             android:hint="İsim Soyisim"
             android:paddingStart="20sp"
             android:paddingTop="16sp"
+            android:drawablePadding="10dp"
             android:drawableStart="@drawable/ic_baseline_person_24"
             android:textColor="?attr/colorOnPrimary"
             android:fontFamily="@font/bentonsans_medium"
@@ -103,6 +105,7 @@
             android:paddingStart="20sp"
             android:drawableStart="@drawable/ic_baseline_email_24"
             android:paddingTop="16sp"
+            android:drawablePadding="10dp"
             android:textColor="?attr/colorOnPrimary"
             android:fontFamily="@font/bentonsans_medium"
             android:textSize="14sp" />
@@ -127,6 +130,8 @@
             android:backgroundTint="?attr/colorSecondaryVariant"
             android:hint="Password"
             android:paddingStart="20sp"
+            android:drawablePadding="10dp"
+            android:inputType="textPassword"
             android:drawableStart="@drawable/ic_baseline_lock_24"
             android:paddingTop="16sp"
             android:textColor="?attr/colorOnPrimary"
@@ -134,6 +139,16 @@
             android:textSize="14sp" />
 
     </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/registerProgressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_CreateAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_CreateAccount"

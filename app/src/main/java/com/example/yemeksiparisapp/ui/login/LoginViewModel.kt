@@ -16,9 +16,13 @@ class LoginViewModel @Inject constructor(
     var foodApiRepository: FoodApiRepository
 ) : ViewModel(){
 
-
-    fun login(email: String, password: String): LiveData<Resource<LoginResponse>> {
-        val request = LoginRequest(email, password)
-        return foodApiRepository.login(request)
+    fun login(userIdentity: String, password: String): LiveData<Resource<LoginResponse>> {
+        if (userIdentity.contains('@')){
+            val request = LoginRequest(null,userIdentity, password)
+            return foodApiRepository.login(request)
+        }else{
+            val request = LoginRequest(userIdentity,null, password)
+            return foodApiRepository.login(request)
+        }
     }
 }

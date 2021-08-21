@@ -74,17 +74,24 @@ class ProfileFragment : Fragment() {
 
     private fun getUserInfo(token: String) {
         viewModel.getUserInfo(token).observe(viewLifecycleOwner,{
-            it.data?.let{
-                _binding.profileLoadingBar.visibility = View.INVISIBLE
-                _binding.profileName.text = it.userinfo.namesurname
-                _binding.profileEmail.text = it.userinfo.email
-                _binding.profileUsername.text = it.userinfo.username
-                PreviousOrdersRvAdapter.orderList = it.userinfo.previousOrders
-                PreviousOrdersRvAdapter.notifyDataSetChanged()
-                Glide.with(_binding.root.context)
-                    .load("https://cutewallpaper.org/21/venom-face-logo/face-venom.png")
-                    .into(_binding.profileImg)
+            when(it.status){
+                Resource.Status.LOADING -> {}
+                Resource.Status.SUCCESS -> {
+                    it.data?.let{
+                        _binding.profileLoadingBar.visibility = View.INVISIBLE
+                        _binding.profileName.text = it.userinfo.namesurname
+                        _binding.profileEmail.text = it.userinfo.email
+                        _binding.profileUsername.text = it.userinfo.username
+                        PreviousOrdersRvAdapter.orderList = it.userinfo.previousOrders
+                        PreviousOrdersRvAdapter.notifyDataSetChanged()
+                        Glide.with(_binding.root.context)
+                            .load("https://cutewallpaper.org/21/venom-face-logo/face-venom.png")
+                            .into(_binding.profileImg)
+                    }
+                }
+                Resource.Status.ERROR -> {}
             }
+
         })
     }
 }

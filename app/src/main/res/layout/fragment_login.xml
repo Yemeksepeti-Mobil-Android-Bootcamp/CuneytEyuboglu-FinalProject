@@ -71,6 +71,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#00000000"
             android:hint="Password"
+            android:inputType="textPassword"
             android:paddingStart="20sp"
             android:fontFamily="@font/bentonsans_medium"
             android:paddingTop="16sp"
@@ -78,6 +79,16 @@
             android:textSize="14sp" />
 
     </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/loginProgressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
