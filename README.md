@@ -28,9 +28,9 @@ Yemeksepeti Mobil Android Bootcamp final project
 
 ## App Overview
 
-<img src="https://github.com/Yemeksepeti-Mobil-Android-Bootcamp/CuneytEyuboglu-FinalProject/blob/main/gifs/app-overview.gif" height="640">
+<img src="https://github.com/Yemeksepeti-Mobil-Android-Bootcamp/CuneytEyuboglu-FinalProject/blob/main/gif/app-overview.gif" height="640">
 
 
 ## Dark/Light Mode Support
 
-<img src="https://github.com/Yemeksepeti-Mobil-Android-Bootcamp/CuneytEyuboglu-FinalProject/blob/main/gifs/dark-lightmode.gif" height="640">
+<img src="https://github.com/Yemeksepeti-Mobil-Android-Bootcamp/CuneytEyuboglu-FinalProject/blob/main/gif/dark-lightmode.gif" height="640">
