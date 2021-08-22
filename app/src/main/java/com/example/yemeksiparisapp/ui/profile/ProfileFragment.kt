@@ -84,9 +84,6 @@ class ProfileFragment : Fragment() {
                         _binding.profileUsername.text = it.userinfo.username
                         PreviousOrdersRvAdapter.orderList = it.userinfo.previousOrders
                         PreviousOrdersRvAdapter.notifyDataSetChanged()
-                        Glide.with(_binding.root.context)
-                            .load("https://cutewallpaper.org/21/venom-face-logo/face-venom.png")
-                            .into(_binding.profileImg)
                     }
                 }
                 Resource.Status.ERROR -> {}

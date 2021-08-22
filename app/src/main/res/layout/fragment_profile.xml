@@ -15,13 +15,15 @@
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
         android:layout_centerInParent="true"
-        android:layout_alignParentTop="true"  />
+        android:layout_below="@id/profileImg"/>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profileImg"
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:layout_alignParentTop="true"
-        android:scaleType="centerCrop"  />
+        android:scaleType="centerCrop"
+        android:src="@drawable/userpicture"/>
 
     <TextView
         android:id="@+id/profileName"
