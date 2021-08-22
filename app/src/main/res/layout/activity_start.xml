@@ -34,15 +34,6 @@
             app:selectedDotColor="@color/active_tab_color" >
         </com.tbuonomo.viewpagerdotsindicator.DotsIndicator>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/next_btn"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button"
-            android:text="Next"
-            android:textColor="@color/white"/>
     </RelativeLayout>
 
 

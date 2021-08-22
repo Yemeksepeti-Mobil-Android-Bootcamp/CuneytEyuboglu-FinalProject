@@ -25,10 +25,6 @@ class OnboardingItem2Fragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        activity?.let {
-            val nextBtn = it.findViewById<AppCompatButton>(R.id.next_btn)
-            nextBtn.visibility = View.GONE
-        }
         _binding = FragmentOnboardingItem2Binding.inflate(inflater,container,false)
         return _binding.root
     }
